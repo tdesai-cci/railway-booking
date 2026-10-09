@@ -1,0 +1,337 @@
+- generic [ref=f10e2]:
+  - link "Skip to main content" [ref=f10e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f10e4]:
+    - generic [ref=f10e5]:
+      - link "Railway Booking home" [ref=f10e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f10e11]:
+          - text: Railway
+          - generic [ref=f10e12]: Booking
+      - navigation "Main" [ref=f10e13]:
+        - link "Book Ticket" [ref=f10e14] [cursor=pointer]:
+          - /url: /#search
+        - link "Why Us" [ref=f10e15] [cursor=pointer]:
+          - /url: /#features
+        - link "Routes" [ref=f10e16] [cursor=pointer]:
+          - /url: /#routes
+        - link "Help & contact" [ref=f10e17] [cursor=pointer]:
+          - /url: /help
+        - generic [ref=f10e18]:
+          - link "Check PNR" [ref=f10e19] [cursor=pointer]:
+            - /url: /check-pnr
+          - link "Sign in" [ref=f10e20] [cursor=pointer]:
+            - /url: /sign-in
+  - main [active] [ref=f10e21]:
+    - generic [ref=f10e403]:
+      - paragraph [ref=f10e404]: 1,247 trains running today across India
+      - heading [level=1] [ref=f10e406]:
+        - text: Your seat on any train,
+        - emphasis [ref=f10e407]: booked in seconds.
+      - paragraph [ref=f10e408]: Live seat availability, instant PNR and e-tickets on WhatsApp — with zero convenience fee on every booking.
+      - list [ref=f10e409]:
+        - listitem [ref=f10e410]: IRCTC authorised partner
+        - listitem [ref=f10e413]: Zero convenience fee
+        - listitem [ref=f10e416]: Free cancellation
+      - form "Search trains" [ref=f10e419]:
+        - tablist "Booking type" [ref=f10e420]:
+          - tab "One way" [selected] [ref=f10e421] [cursor=pointer]
+          - tab "Round trip" [ref=f10e422] [cursor=pointer]
+          - tab "Multi-city" [ref=f10e423] [cursor=pointer]
+        - generic [ref=f10e424]:
+          - generic [ref=f10e425]:
+            - generic [ref=f10e426]: From
+            - combobox "From" [ref=f10e427] [cursor=pointer]:
+              - option "New Delhi (NDLS)" [selected]
+              - option "Mumbai Central (MMCT)"
+              - option "Chennai Central (MAS)"
+              - option "KSR Bengaluru (SBC)"
+              - option "Hyderabad Deccan (HYB)"
+              - option "Howrah Kolkata (HWH)"
+              - option "Jaipur (JP)"
+              - option "Pune Junction (PUNE)"
+              - option "Ahmedabad (ADI)"
+              - option "Vadodara (BRC)"
+          - button "Swap origin and destination stations" [ref=f10e428] [cursor=pointer]
+          - generic [ref=f10e432]:
+            - generic [ref=f10e433]: To
+            - combobox "To" [ref=f10e434] [cursor=pointer]:
+              - option "New Delhi (NDLS)"
+              - option "Mumbai Central (MMCT)" [selected]
+              - option "Chennai Central (MAS)"
+              - option "KSR Bengaluru (SBC)"
+              - option "Hyderabad Deccan (HYB)"
+              - option "Howrah Kolkata (HWH)"
+              - option "Jaipur (JP)"
+              - option "Pune Junction (PUNE)"
+              - option "Ahmedabad (ADI)"
+              - option "Vadodara (BRC)"
+        - generic [ref=f10e435]:
+          - generic [ref=f10e436]:
+            - generic [ref=f10e437]: Travel date
+            - textbox "Travel date" [ref=f10e438]: 2026-10-11
+          - generic [ref=f10e439]:
+            - generic [ref=f10e440]: Class
+            - combobox "Class" [ref=f10e441] [cursor=pointer]:
+              - option "1A — AC First Class"
+              - option "2A — AC Tier 2"
+              - option "3A — AC Tier 3" [selected]
+              - option "SL — Sleeper (Non-AC)"
+              - option "GN — General"
+          - generic [ref=f10e442]:
+            - generic [ref=f10e443]: Passengers
+            - generic [ref=f10e444]:
+              - button "Remove a passenger" [disabled] [ref=f10e445]
+              - status [ref=f10e447]: "1"
+              - button "Add a passenger" [ref=f10e448] [cursor=pointer]
+          - generic [ref=f10e451]:
+            - generic [ref=f10e452]: Search
+            - button "Search" [ref=f10e453] [cursor=pointer]: Search Trains
+        - paragraph [ref=f10e457]: Tatkal quota opens at 10:00 AM and 11:00 AM for the next day.
+    - region "Service statistics" [ref=f10e461]:
+      - generic [ref=f10e463]:
+        - generic [ref=f10e464]:
+          - generic [ref=f10e466]:
+            - generic [ref=f10e467]: "0"
+            - generic [ref=f10e468]: Trains every day
+          - generic [ref=f10e470]:
+            - generic [ref=f10e471]: "0"
+            - generic [ref=f10e472]: Routes across India
+          - generic [ref=f10e474]:
+            - generic [ref=f10e475]: "0"
+            - generic [ref=f10e476]: Passengers booked
+          - generic [ref=f10e478]:
+            - generic [ref=f10e479]: "0"
+            - generic [ref=f10e480]: On-time success rate
+        - paragraph [ref=f10e481]:
+          - text: "Photos:"
+          - link "Vande Bharat Express" [ref=f10e482] [cursor=pointer]:
+            - /url: https://commons.wikimedia.org/wiki/File:Vande_Bharat_Express_around_Mumbai.jpg
+          - text: ","
+          - link "Chhatrapati Shivaji Terminus" [ref=f10e483] [cursor=pointer]:
+            - /url: https://commons.wikimedia.org/wiki/File:Chhatrapati_Shivaji_Terminus_(Victoria_Terminus).jpg
+          - text: · Wikimedia Commons, CC BY-SA
+    - generic [ref=f10e485]:
+      - generic [ref=f10e486]:
+        - heading "Everything the railway counter does, without the queue." [level=2] [ref=f10e487]
+        - paragraph [ref=f10e488]: Built for the way Indians actually travel — Tatkal, festival season and everything in between.
+      - generic [ref=f10e489]:
+        - article [ref=f10e490]:
+          - generic [ref=f10e494]:
+            - heading "Authorised IRCTC partner" [level=3] [ref=f10e495]
+            - paragraph [ref=f10e496]: Official Fast Rail booking. Your PNR is generated on Indian Railways servers, not ours.
+        - article [ref=f10e497]:
+          - generic [ref=f10e502]:
+            - heading "Zero convenience fee" [level=3] [ref=f10e503]
+            - paragraph [ref=f10e504]: The fare you see is the fare you pay. No hidden IRCTC surcharge, no service charge tacked on at checkout.
+        - article [ref=f10e505]:
+          - generic [ref=f10e509]:
+            - heading "Instant PNR & status" [level=3] [ref=f10e510]
+            - paragraph [ref=f10e511]: Your ticket lands in under a second. Live train running status, platform and coach position included.
+        - article [ref=f10e512]:
+          - generic [ref=f10e516]:
+            - heading "Free instant cancellation" [level=3] [ref=f10e517]
+            - paragraph [ref=f10e518]: Cancel any ticket before chart preparation and the full amount lands back in your account. No questions.
+        - article [ref=f10e519]:
+          - generic [ref=f10e522]:
+            - heading "E-ticket on WhatsApp" [level=3] [ref=f10e523]
+            - paragraph [ref=f10e524]: Your coach, berth and departure reminder delivered to your phone — no app install, no PDF hunting.
+        - article [ref=f10e525]:
+          - generic [ref=f10e529]:
+            - heading "Round-the-clock support" [level=3] [ref=f10e530]
+            - paragraph [ref=f10e531]: "A real human on chat and phone, 24×7×365. Tatkal season included. Average first response: 40 seconds."
+    - generic [ref=f10e533]:
+      - generic [ref=f10e534]:
+        - heading "The routes booked most this month" [level=2] [ref=f10e535]
+        - paragraph [ref=f10e536]: Fares below are for a single AC Tier 3 seat on the cheapest train in the corridor.
+      - generic [ref=f10e537]:
+        - article [ref=f10e538]:
+          - generic [ref=f10e539]: Delhi → Mumbai
+          - generic [ref=f10e541]:
+            - heading "Delhi → Mumbai" [level=3] [ref=f10e542]
+            - paragraph [ref=f10e543]: New Delhi · Mumbai Central
+            - generic [ref=f10e544]:
+              - generic [ref=f10e545]: 16h 20m
+              - generic [ref=f10e549]: 42 trains
+            - link "Book from ₹1,145" [ref=f10e552] [cursor=pointer]:
+              - /url: "#search"
+        - article [ref=f10e553]:
+          - generic [ref=f10e554]: Mumbai → Bengaluru
+          - generic [ref=f10e556]:
+            - heading "Mumbai → Bengaluru" [level=3] [ref=f10e557]
+            - paragraph [ref=f10e558]: Mumbai CSMT · KSR Bengaluru
+            - generic [ref=f10e559]:
+              - generic [ref=f10e560]: 14h 35m
+              - generic [ref=f10e564]: 28 trains
+            - link "Book from ₹892" [ref=f10e567] [cursor=pointer]:
+              - /url: "#search"
+        - article [ref=f10e568]:
+          - generic [ref=f10e569]: Chennai → Hyderabad
+          - generic [ref=f10e571]:
+            - heading "Chennai → Hyderabad" [level=3] [ref=f10e572]
+            - paragraph [ref=f10e573]: Chennai Central · Hyderabad Deccan
+            - generic [ref=f10e574]:
+              - generic [ref=f10e575]: 9h 45m
+              - generic [ref=f10e579]: 31 trains
+            - link "Book from ₹604" [ref=f10e582] [cursor=pointer]:
+              - /url: "#search"
+        - article [ref=f10e583]:
+          - generic [ref=f10e584]: Delhi → Kolkata
+          - generic [ref=f10e586]:
+            - heading "Delhi → Kolkata" [level=3] [ref=f10e587]
+            - paragraph [ref=f10e588]: New Delhi · Howrah
+            - generic [ref=f10e589]:
+              - generic [ref=f10e590]: 17h 10m
+              - generic [ref=f10e594]: 33 trains
+            - link "Book from ₹1,028" [ref=f10e597] [cursor=pointer]:
+              - /url: "#search"
+    - generic [ref=f10e599]:
+      - generic [ref=f10e600]:
+        - heading "Three taps, then you're on your way" [level=2] [ref=f10e601]
+        - paragraph [ref=f10e602]: No registration needed to search. Payment only when you're actually booking.
+      - generic [ref=f10e603]:
+        - generic [ref=f10e604]:
+          - generic [aria-hidden] [ref=f10e605]: "01"
+          - heading "Search your route" [level=3] [ref=f10e606]
+          - paragraph [ref=f10e607]: Enter origin, destination and date. See every train with live availability and the true fare for your class.
+        - generic [ref=f10e608]:
+          - generic [aria-hidden] [ref=f10e609]: "02"
+          - heading "Pick your seat" [level=3] [ref=f10e610]
+          - paragraph [ref=f10e611]: Choose from an interactive coach map, see exactly where you'll sit, and lock the berth before anyone else does.
+        - generic [ref=f10e612]:
+          - generic [aria-hidden] [ref=f10e613]: "03"
+          - heading "Pay and travel" [level=3] [ref=f10e614]
+          - paragraph [ref=f10e615]: UPI, cards, netbanking — all zero-fee. PNR and e-ticket arrive instantly, by email and WhatsApp.
+    - generic [ref=f10e617]:
+      - heading "People who stopped queueing" [level=2] [ref=f10e619]
+      - generic [ref=f10e620]:
+        - figure [ref=f10e621]:
+          - generic "Rated 5 out of 5" [ref=f10e622]
+          - blockquote [ref=f10e633]:
+            - paragraph [ref=f10e634]: Booked a Diwali ticket from the queue outside CSMT at 11:40 PM. Got the berth number before I reached home. Genuinely didn't expect that.
+          - generic [ref=f10e635]:
+            - generic [aria-hidden] [ref=f10e636]: AR
+            - generic [ref=f10e637]: Ananya RaoPune → Nagpur · 12956
+        - figure [ref=f10e638]:
+          - generic "Rated 5 out of 5" [ref=f10e639]
+          - blockquote [ref=f10e650]:
+            - paragraph [ref=f10e651]: I book six tickets a month for my parents. The WhatsApp reminder with coach and berth has replaced about fifteen texts from relatives.
+          - generic [ref=f10e652]:
+            - generic [aria-hidden] [ref=f10e653]: IM
+            - generic [ref=f10e654]: Imran MerchantMumbai → Surat · 12955
+        - figure [ref=f10e655]:
+          - generic "Rated 5 out of 5" [ref=f10e656]
+          - blockquote [ref=f10e667]:
+            - paragraph [ref=f10e668]: Cancelled a sleeper berth on the way to the airport, money back in four minutes. That's a smaller miracle than it sounds.
+          - generic [ref=f10e669]:
+            - generic [aria-hidden] [ref=f10e670]: SK
+            - generic [ref=f10e671]: Sneha KulkarniBengaluru → Chennai · 12041
+    - generic [ref=f10e673]:
+      - heading "Before you book" [level=2] [ref=f10e675]
+      - generic [ref=f10e676]:
+        - generic [ref=f10e677]:
+          - button [expanded] [ref=f10e678] [cursor=pointer]
+          - paragraph [ref=f10e683]: No. You can search, compare fares and complete a booking as a guest. An IRCTC login is only needed if you'd like your tickets saved to your account history or you want to book more than the guest quota.
+        - button [ref=f10e685] [cursor=pointer]
+        - button [ref=f10e690] [cursor=pointer]
+        - button [ref=f10e695] [cursor=pointer]
+        - button [ref=f10e700] [cursor=pointer]
+        - button [ref=f10e705] [cursor=pointer]
+    - generic [ref=f10e712]:
+      - heading "Your next journey starts here." [level=2] [ref=f10e713]
+      - paragraph [ref=f10e714]: Join 4.2 million travellers who book Indian Railways tickets without the queue. Search is free and always will be.
+      - generic [ref=f10e715]:
+        - link "Search trains" [ref=f10e716] [cursor=pointer]:
+          - /url: "#search"
+        - link "Browse routes" [ref=f10e717] [cursor=pointer]:
+          - /url: "#routes"
+  - contentinfo [ref=f10e339]:
+    - generic [ref=f10e340]:
+      - generic [ref=f10e341]:
+        - generic [ref=f10e342]:
+          - link "Railway Booking home" [ref=f10e343] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f10e348]:
+              - text: Railway
+              - generic [ref=f10e349]: Booking
+          - paragraph [ref=f10e350]: An authorised Fast Rail partner. Ticketing services are provided subject to the rules of Indian Railways and IRCTC.
+        - generic [ref=f10e351]:
+          - heading "Book" [level=3] [ref=f10e352]
+          - list [ref=f10e353]:
+            - listitem [ref=f10e354]:
+              - link "One way" [ref=f10e355] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f10e356]:
+              - link "Round trip" [ref=f10e357] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f10e358]:
+              - link "Multi-city" [ref=f10e359] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f10e360]:
+              - link "Tatkal" [ref=f10e361] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f10e362]:
+              - link "Popular routes" [ref=f10e363] [cursor=pointer]:
+                - /url: /#routes
+        - generic [ref=f10e364]:
+          - heading "Support" [level=3] [ref=f10e365]
+          - list [ref=f10e366]:
+            - listitem [ref=f10e367]:
+              - link "FAQ" [ref=f10e368] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f10e369]:
+              - link "Check PNR" [ref=f10e370] [cursor=pointer]:
+                - /url: /check-pnr
+            - listitem [ref=f10e371]:
+              - link "My Bookings" [ref=f10e372] [cursor=pointer]:
+                - /url: /my-bookings
+            - listitem [ref=f10e373]:
+              - link "Help & contact" [ref=f10e374] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=f10e375]:
+              - link "Refund policy" [ref=f10e376] [cursor=pointer]:
+                - /url: /refund-policy
+        - generic [ref=f10e377]:
+          - heading "Company" [level=3] [ref=f10e378]
+          - list [ref=f10e379]:
+            - listitem [ref=f10e380]:
+              - link "About us" [ref=f10e381] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f10e382]:
+              - link "Privacy" [ref=f10e383] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=f10e384]:
+              - link "Terms" [ref=f10e385] [cursor=pointer]:
+                - /url: /terms
+      - generic [ref=f10e386]:
+        - generic [ref=f10e387]: © 2026 Railway Booking. All rights reserved.
+        - list [ref=f10e388]:
+          - listitem [ref=f10e389]:
+            - link "Privacy" [ref=f10e390] [cursor=pointer]:
+              - /url: /privacy
+          - listitem [ref=f10e391]:
+            - link "Terms" [ref=f10e392] [cursor=pointer]:
+              - /url: /terms
+      - paragraph [ref=f10e393]:
+        - text: "Photos:"
+        - link "Vande Bharat Express" [ref=f10e394] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Vande_Bharat_Express_around_Mumbai.jpg
+        - text: ","
+        - link "CSMT" [ref=f10e395] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Chhatrapati_Shivaji_Terminus_(Victoria_Terminus).jpg
+        - text: ","
+        - link "Rajdhani" [ref=f10e396] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Trivandrum_Rajdhani_Express_at_Trivandrum_Central_Station.jpg
+        - text: ","
+        - link "Gateway of India" [ref=f10e397] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gateway_of_India_-_HDR.jpg
+        - text: ","
+        - link "Charminar" [ref=f10e398] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:The_Charminar_on_a_cloudy_day.jpg
+        - text: ","
+        - link "India Gate" [ref=f10e399] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:India_Gate,_New_Delhi.jpg
+        - text: ","
+        - link "Dibrugarh" [ref=f10e400] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dibrugarh_Rajdhani_Express_at_Dibrugarh_Railway_Station.jpg
+        - text: — Wikimedia Commons, CC BY-SA

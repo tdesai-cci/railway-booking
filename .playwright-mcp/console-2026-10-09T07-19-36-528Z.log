@@ -1,1 +1,17 @@
 [     628ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:22162
+[  208770ms] ReferenceError: FLink is not defined
+    at http://localhost:5173/src/App.jsx?t=1791530585129:330:143
+    at Array.map (<anonymous>)
+    at http://localhost:5173/src/App.jsx?t=1791530585129:330:62
+    at Array.map (<anonymous>)
+    at Footer (http://localhost:5173/src/App.jsx?t=1791530585129:323:16)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:20257:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:5916:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:7761:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:8841:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:1131:72)
+[  208754ms] [WARNING] %s
+
+%s
+ An error occurred in the <Footer> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=12721a73:7238

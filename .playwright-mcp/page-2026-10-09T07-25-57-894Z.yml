@@ -1,0 +1,122 @@
+- generic [ref=f1e2]:
+  - link "Skip to main content" [ref=f1e3] [cursor=pointer]:
+    - /url: "#main"
+  - banner [ref=f1e4]:
+    - generic [ref=f1e5]:
+      - link "Railway Booking home" [ref=f1e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f1e11]:
+          - text: Railway
+          - generic [ref=f1e12]: Booking
+      - navigation "Main" [ref=f1e13]:
+        - link "Book Ticket" [ref=f1e14] [cursor=pointer]:
+          - /url: /#search
+        - link "Why Us" [ref=f1e15] [cursor=pointer]:
+          - /url: /#features
+        - link "Routes" [ref=f1e16] [cursor=pointer]:
+          - /url: /#routes
+        - link "Help & contact" [ref=f1e17] [cursor=pointer]:
+          - /url: /help
+        - generic [ref=f1e18]:
+          - link "Check PNR" [ref=f1e19] [cursor=pointer]:
+            - /url: /check-pnr
+          - link "Sign in" [ref=f1e20] [cursor=pointer]:
+            - /url: /sign-in
+  - main [active] [ref=f1e21]:
+    - generic [ref=f1e24]:
+      - generic [ref=f1e25]: Coming soon
+      - heading "Check PNR" [level=2] [ref=f1e26]
+      - paragraph [ref=f1e27]: Check PNR is being built. It will live on this page.
+      - paragraph [ref=f1e28]:
+        - link "Back to home" [ref=f1e29] [cursor=pointer]:
+          - /url: /
+  - contentinfo [ref=f1e30]:
+    - generic [ref=f1e31]:
+      - generic [ref=f1e32]:
+        - generic [ref=f1e33]:
+          - link "Railway Booking home" [ref=f1e34] [cursor=pointer]:
+            - /url: /
+            - generic [ref=f1e39]:
+              - text: Railway
+              - generic [ref=f1e40]: Booking
+          - paragraph [ref=f1e41]: An authorised Fast Rail partner. Ticketing services are provided subject to the rules of Indian Railways and IRCTC.
+        - generic [ref=f1e42]:
+          - heading "Book" [level=3] [ref=f1e43]
+          - list [ref=f1e44]:
+            - listitem [ref=f1e45]:
+              - link "One way" [ref=f1e46] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f1e47]:
+              - link "Round trip" [ref=f1e48] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f1e49]:
+              - link "Multi-city" [ref=f1e50] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f1e51]:
+              - link "Tatkal" [ref=f1e52] [cursor=pointer]:
+                - /url: /#search
+            - listitem [ref=f1e53]:
+              - link "Popular routes" [ref=f1e54] [cursor=pointer]:
+                - /url: /#routes
+        - generic [ref=f1e55]:
+          - heading "Support" [level=3] [ref=f1e56]
+          - list [ref=f1e57]:
+            - listitem [ref=f1e58]:
+              - link "FAQ" [ref=f1e59] [cursor=pointer]:
+                - /url: /#faq
+            - listitem [ref=f1e60]:
+              - link "Check PNR" [ref=f1e61] [cursor=pointer]:
+                - /url: /check-pnr
+            - listitem [ref=f1e62]:
+              - link "My Bookings" [ref=f1e63] [cursor=pointer]:
+                - /url: /my-bookings
+            - listitem [ref=f1e64]:
+              - link "Help & contact" [ref=f1e65] [cursor=pointer]:
+                - /url: /help
+            - listitem [ref=f1e66]:
+              - link "Refund policy" [ref=f1e67] [cursor=pointer]:
+                - /url: /refund-policy
+        - generic [ref=f1e68]:
+          - heading "Company" [level=3] [ref=f1e69]
+          - list [ref=f1e70]:
+            - listitem [ref=f1e71]:
+              - link "About us" [ref=f1e72] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=f1e73]:
+              - link "Privacy" [ref=f1e74] [cursor=pointer]:
+                - /url: /privacy
+            - listitem [ref=f1e75]:
+              - link "Terms" [ref=f1e76] [cursor=pointer]:
+                - /url: /terms
+      - generic [ref=f1e77]:
+        - generic [ref=f1e78]: © 2026 Railway Booking. All rights reserved.
+        - list [ref=f1e79]:
+          - listitem [ref=f1e80]:
+            - link "Privacy" [ref=f1e81] [cursor=pointer]:
+              - /url: /privacy
+          - listitem [ref=f1e82]:
+            - link "Terms" [ref=f1e83] [cursor=pointer]:
+              - /url: /terms
+      - paragraph [ref=f1e84]:
+        - text: "Photos:"
+        - link "Vande Bharat Express" [ref=f1e85] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Vande_Bharat_Express_around_Mumbai.jpg
+        - text: ","
+        - link "CSMT" [ref=f1e86] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Chhatrapati_Shivaji_Terminus_(Victoria_Terminus).jpg
+        - text: ","
+        - link "Rajdhani" [ref=f1e87] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Trivandrum_Rajdhani_Express_at_Trivandrum_Central_Station.jpg
+        - text: ","
+        - link "Gateway of India" [ref=f1e88] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Gateway_of_India_-_HDR.jpg
+        - text: ","
+        - link "Charminar" [ref=f1e89] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:The_Charminar_on_a_cloudy_day.jpg
+        - text: ","
+        - link "India Gate" [ref=f1e90] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:India_Gate,_New_Delhi.jpg
+        - text: ","
+        - link "Dibrugarh" [ref=f1e91] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Dibrugarh_Rajdhani_Express_at_Dibrugarh_Railway_Station.jpg
+        - text: — Wikimedia Commons, CC BY-SA
