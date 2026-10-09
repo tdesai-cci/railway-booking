@@ -51,11 +51,11 @@ URLs, US3 honest placeholders) so each story is independently testable.
 
 ### Implementation for User Story 1
 
-- [ ] T007 [US1] Rewire Header in src/App.jsx: links derived from route table `nav` field; wordmark → `/`; "Check PNR"/"Sign in" → their routes; in-page anchors render as `/#<id>` (FR-002, FR-005)
-- [ ] T008 [US1] Rewire mobile menu in src/App.jsx from the route table; close menu on any navigation, preserving `aria-expanded`/`aria-controls` (FR-002, FR-007)
-- [ ] T009 [US1] Rewire Footer in src/App.jsx link columns (Book, Support, Company, legal row) from the route table; remove `href="#"` stubs (FR-002, FR-008)
-- [ ] T010 [US1] Add route-table ↔ nav assertions to scripts/self-check.mjs per contracts/route-table.md rules 1–4 (unique paths starting with `/`, page xor placeholder, owner ∈ CAPABILITIES.md, nav labels ∈ table)
-- [ ] T011 [US1] Verify: `npm run check` passes new assertions; `npm run build` passes; quickstart scenarios 1–3 manually confirmed
+- [X] T007 [US1] Rewire Header in src/App.jsx: links derived from route table `nav` field; wordmark → `/`; "Check PNR"/"Sign in" → their routes; in-page anchors render as `/#<id>` (FR-002, FR-005)
+- [X] T008 [US1] Rewire mobile menu in src/App.jsx from the route table; close menu on any navigation, preserving `aria-expanded`/`aria-controls` (FR-002, FR-007)
+- [X] T009 [US1] Rewire Footer in src/App.jsx link columns (Book, Support, Company, legal row) from the route table; remove `href="#"` stubs (FR-002, FR-008)
+- [X] T010 [US1] Add route-table ↔ nav assertions to scripts/self-check.mjs per contracts/route-table.md rules 1–4 (unique paths starting with `/`, page xor placeholder, owner ∈ CAPABILITIES.md, nav labels ∈ table)
+- [X] T011 [US1] Verify: `npm run check` passes new assertions (129 total); `npm run build` passes; quickstart scenarios 1–3 manually confirmed in browser (desktop + 390px mobile; menu closes on nav; anchors scroll; zero console errors)
 
 **Checkpoint**: US1 complete — navigation fully functional and independently demonstrable.
 
