@@ -165,7 +165,7 @@ Task T012 [P]: "Route-card images via module imports in src/pages/Home.jsx"
 
 ## Notes
 
-- [P] = different files, no dependencies; everything else serial (shared stylesheet)
+- `**[P]**` marker = different files, no dependencies; everything else serial (shared stylesheet)
 - Commit after each story/checkpoint; keep `npm run build` + `npm run check` green at every commit
 - Token rule: additive only — never edit an existing token value (constitution II, ask-first)
 - No new dependencies; no routing changes (plan Constitution Check)
