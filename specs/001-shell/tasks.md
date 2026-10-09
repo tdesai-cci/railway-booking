@@ -34,10 +34,10 @@ URLs, US3 honest placeholders) so each story is independently testable.
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 [P] Create src/pages/Placeholder.jsx — shared labeled placeholder rendering `blurb`, `cta` (link), honoring constitution III (no new animation outside existing motion helpers) per data-model.md
-- [ ] T004 [P] Create src/pages/NotFound.jsx — plain message + working link home (FR-003)
-- [ ] T005 Create src/routes.jsx — route table per contracts/route-table.md: 9 site-map rows (path, label, nav group, owner), `homeAnchors: ["search","features","routes","how","faq"]`, single `path` uniqueness invariant (FR-008, data-model invariants 1–2)
-- [ ] T006 Rework src/App.jsx into the shell: mount BrowserRouter, render Header + route outlet + Footer, generate `<Routes>` from the table with NotFound as catch-all (FR-001, FR-003)
+- [X] T003 [P] Create src/pages/Placeholder.jsx — shared labeled placeholder rendering `blurb`, `cta` (link), honoring constitution III (no new animation outside existing motion helpers) per data-model.md
+- [X] T004 [P] Create src/pages/NotFound.jsx — plain message + working link home (FR-003)
+- [X] T005 Create src/routes.jsx — route table per contracts/route-table.md: 9 site-map rows (path, label, nav group, owner), `homeAnchors: ["search","features","routes","how","faq"]`, single `path` uniqueness invariant (FR-008, data-model invariants 1–2)
+- [X] T006 Rework src/App.jsx into the shell: mount BrowserRouter, render Header + route outlet + Footer, generate `<Routes>` from the table with NotFound as catch-all (FR-001, FR-003)
 
 **Checkpoint**: Foundation ready — every route in the table renders (placeholders minimal), unknown URLs show NotFound, `npm run build` + `npm run check` pass.
 

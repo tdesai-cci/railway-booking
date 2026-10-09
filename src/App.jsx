@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { staggerParent, reveal, tap, EASE } from "./motion.js";
-import Home, { TrainMark } from "./pages/Home.jsx";
+import { routes } from "./routes.jsx";
+import { TrainMark } from "./pages/Home.jsx";
+import Placeholder from "./pages/Placeholder.jsx";
+import NotFound from "./pages/NotFound.jsx";
 import "./styles.css";
 
 /* ============================================================
@@ -129,18 +133,26 @@ function Footer() {
 }
 
 /* ============================================================
-   APP — slice 1: shell mount without routing yet.
+   APP — the shell: router + chrome. Pages render into <main>.
    ============================================================ */
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <a className="skip" href="#main">Skip to main content</a>
       <Header />
       <main id="main">
-        <Home />
+        <Routes>
+          {routes.map(r => (
+            <Route key={r.path} path={r.path}
+              element={r.page
+                ? <r.page />
+                : <Placeholder title={r.label} blurb={r.placeholder.blurb} cta={r.placeholder.cta} />} />
+          ))}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </main>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
