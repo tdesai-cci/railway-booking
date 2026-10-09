@@ -85,9 +85,9 @@ URLs, US3 honest placeholders) so each story is independently testable.
 
 ### Implementation for User Story 3
 
-- [ ] T015 [P] [US3] Populate `placeholder: { blurb, cta }` for all 8 unbuilt-module rows in src/routes.jsx — plain, specific copy per constitution (name what the page will do), no invented figures (FR-006, voice constraint)
-- [ ] T016 [US3] Verify: quickstart scenario 8 across all placeholder routes; confirm a placeholder row and a shipped page are mutually exclusive (data-model invariant 3)
-- [ ] T017 [US3] Verify placeholders contain no fare/price figures and no IRCTC/IR marks (constitution I–II)
+- [X] T015 [P] [US3] Populate `placeholder: { blurb, cta }` for all 8 unbuilt-module rows in src/routes.jsx — plain, specific copy per constitution (name what the page will do), no invented figures (FR-006, voice constraint)
+- [X] T016 [US3] Verify: quickstart scenario 8 across all placeholder routes; confirm a placeholder row and a shipped page are mutually exclusive (data-model invariant 3)
+- [X] T017 [US3] Verify placeholders contain no fare/price figures and no IRCTC/IR marks (constitution I–II)
 
 **Checkpoint**: All three stories independently functional.
 
