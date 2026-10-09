@@ -198,18 +198,20 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 .brand-sub{display:block;font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.8;line-height:1.2}
 
 .nav{display:flex;align-items:center;gap:var(--s5);margin-left:auto}
-.nav a{
+/* :not(.btn) keeps these link rules off the CTA buttons nested in .nav-cta —
+   without it they strip the buttons' horizontal padding, colour and type size. */
+.nav a:not(.btn){
   position:relative;color:rgba(255,255,255,.86);font-weight:600;font-size:var(--fs-base);
   padding:var(--s2) 0;
 }
-.nav a::after{
+.nav a:not(.btn)::after{
   content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;
   background:var(--accent-500);border-radius:2px;
   transform:scaleX(0);transform-origin:right;
   transition:transform var(--t-base) var(--ease);
 }
-.nav a:hover{color:var(--surface)}
-.nav a:hover::after,.nav a:focus-visible::after{transform:scaleX(1);transform-origin:left}
+.nav a:not(.btn):hover{color:var(--surface)}
+.nav a:not(.btn):hover::after,.nav a:not(.btn):focus-visible::after{transform:scaleX(1);transform-origin:left}
 .nav-cta{display:flex;gap:var(--s3);margin-left:var(--s5)}
 
 .burger{
@@ -226,17 +228,13 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 .hdr.is-solid{background:rgba(255,255,255,.94);box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(11,18,32,.22);padding:var(--s3) 0}
 .hdr.is-solid .brand{color:var(--brand-800)}
 .hdr.is-solid .brand:hover{color:var(--brand-700)}
-.hdr.is-solid .nav a{color:var(--ink-2)}
-.hdr.is-solid .nav a:hover{color:var(--brand-700)}
+.hdr.is-solid .nav a:not(.btn){color:var(--ink-2)}
+.hdr.is-solid .nav a:not(.btn):hover{color:var(--brand-700)}
 .hdr.is-solid .burger{color:var(--brand-800);border-color:var(--line)}
 /* On the white header the default white-tint hover would be invisible. */
 .hdr.is-solid .burger:hover{background:var(--brand-50)}
 .hdr.is-solid .burger[aria-expanded="true"]{background:var(--brand-100);border-color:var(--brand-300)}
 .hdr.is-solid .burger:active{background:var(--line);color:var(--brand-900)}
-/* Nav link colour must not bleed onto the buttons nested in .nav-cta. */
-.hdr.is-solid .nav .btn-accent,.hdr.is-solid .nav .btn-onhero{color:var(--surface)}
-.hdr.is-solid .nav .btn-accent:hover{color:var(--surface)}
-.hdr.is-solid .nav .btn-onhero:hover{color:var(--surface)}
 
 /* ============================================================
    HERO
@@ -555,12 +553,11 @@ input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
   .mobile-nav{display:block;overflow:hidden;margin-top:var(--s4)}
   .hdr.is-solid .mobile-nav{background:var(--surface);padding:var(--s4);border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid var(--line)}
   .hdr:not(.is-solid) .mobile-nav{background:var(--brand-900);padding:var(--s4);border-radius:var(--r-lg);box-shadow:var(--sh-lg);border:1px solid rgba(255,255,255,.18)}
-  .mobile-nav a{display:block;padding:.75rem .5rem;color:var(--surface);font-weight:600;border-bottom:1px solid rgba(255,255,255,.14)}
-  .hdr.is-solid .mobile-nav a{color:var(--ink-2);border-bottom-color:var(--line)}
-  /* The CTA inside the sheet must keep white on saffron. */
-  .hdr.is-solid .mobile-nav a.btn-accent{color:var(--surface)}
-  .hdr.is-solid .mobile-nav a.btn-accent:hover{color:var(--surface)}
-  .mobile-nav a:last-of-type{border-bottom:0}
+  /* :not(.btn) as in .nav — the sheet's CTA keeps its own padding, colour and
+     no divider line. */
+  .mobile-nav a:not(.btn){display:block;padding:.75rem .5rem;color:var(--surface);font-weight:600;border-bottom:1px solid rgba(255,255,255,.14)}
+  .hdr.is-solid .mobile-nav a:not(.btn){color:var(--ink-2);border-bottom-color:var(--line)}
+  .mobile-nav a:not(.btn):last-of-type{border-bottom:0}
   .mobile-nav .btn{width:100%;margin-top:var(--s4)}
 }
 @media (max-width:760px){
