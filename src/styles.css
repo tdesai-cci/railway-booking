@@ -59,6 +59,29 @@
   --ease:cubic-bezier(.4,0,.2,1);
   /* confident arrival — long tail, no overshoot */
   --ease-in:cubic-bezier(.16,1,.3,1);
+
+  /* Type scale — every value is the literal it replaces, byte-identical. */
+  --fs-xs:.75rem;    --fs-sm:.8125rem; --fs-md:.875rem;
+  --fs-base:.9375rem; --fs-lg:1.0625rem;
+  --fs-body:1rem;    --fs-h3:1.125rem; --fs-step:3rem;
+  --fs-lead:clamp(1rem,1.6vw,1.1875rem);
+  --fs-h1:clamp(2.25rem,5.4vw,3.75rem); --fs-h1-sm:2rem;
+  --fs-h2:clamp(1.75rem,3.4vw,2.5rem);
+  --fs-stat:clamp(1.875rem,4vw,2.75rem);
+
+  /* Focus ring — one shared treatment, one dark-plate variant (contract rule 3). */
+  --focus-ring:var(--brand-500); /* 8.7:1 on white and brand-50 */
+  --focus-ring-dark:#fff;        /* navy plates — 15:1 on brand-900 */
+  --focus-ring-w:3px;
+  --focus-ring-off:2px;
+
+  /* Control size classes — heights live here once (contract size invariant). */
+  --ctl-h-sm:40px;    /* .btn-sm, .tab */
+  --ctl-h-md:48px;    /* .btn, .burger */
+  --ctl-h-field:52px; /* .ctl, .stepper, .swap */
+  --tap-min:24px;     /* WCAG 2.2 AA §2.5.8 floor */
+
+  --surface:#fff;
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -83,11 +106,16 @@ h3{font-size:1.125rem;font-weight:700;letter-spacing:-.01em;font-variation-setti
 p{margin:0;text-wrap:pretty}
 a{color:var(--brand-700);text-decoration:none;transition:color var(--t-fast) var(--ease);text-underline-offset:3px;text-decoration-thickness:1px}
 a:hover{color:var(--brand-500);text-decoration:underline}
+/* Pressed link cue for nav/footer/credit rows — opacity, not motion alone. */
+a:not(.btn):active{opacity:.75}
 button,input,select{font:inherit;color:inherit}
 button{cursor:pointer;background:none;border:0}
 
-:focus-visible{outline:3px solid var(--brand-500);outline-offset:2px;border-radius:4px}
-.hero :focus-visible,.cta :focus-visible{outline-color:#fff}
+:focus-visible{outline:var(--focus-ring-w) solid var(--focus-ring);outline-offset:var(--focus-ring-off);border-radius:4px}
+/* Dark plates flip the ring token; the rule above reads it unchanged.
+   Scoped per surface — never via .hero inheritance, or the white search
+   card nested inside the hero would inherit a white ring. */
+.stats,.cta,.ftr,.skip,.hdr:not(.is-solid){--focus-ring:var(--focus-ring-dark)}
 
 .skip{
   position:absolute;left:var(--s4);top:-100px;z-index:200;
@@ -120,7 +148,7 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
    ============================================================ */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  min-height:48px;padding:.625rem var(--s5);
+  min-height:var(--ctl-h-md);padding:.625rem var(--s5);
   border-radius:var(--r-md);font-weight:700;font-size:.9375rem;
   border:1px solid transparent;white-space:nowrap;
   transition:transform var(--t-fast) var(--ease),
@@ -128,7 +156,6 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
              background-color var(--t-base) var(--ease),
              border-color var(--t-base) var(--ease);
 }
-.btn:active{transform:scale(.97)}
 .btn-primary{background:var(--brand-800);color:#fff;box-shadow:var(--sh-md)}
 .btn-primary:hover{background:var(--brand-700);color:#fff;box-shadow:var(--sh-lg);transform:translateY(-1px)}
 .btn-accent{background:var(--accent-600);color:#fff;box-shadow:var(--sh-md)}
@@ -138,9 +165,16 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 /* Opaque enough that the label clears 4.5:1 over any part of the photo. */
 .btn-onhero{background:rgba(9,16,40,.72);color:#fff;border-color:rgba(255,255,255,.55)}
 .btn-onhero:hover{background:rgba(9,16,40,.86);color:#fff;border-color:rgba(255,255,255,.85)}
-.btn-sm{min-height:40px;padding:.5rem var(--s4);font-size:.875rem}
+.btn-sm{min-height:var(--ctl-h-sm);padding:.5rem var(--s4);font-size:var(--fs-md)}
 .btn-white{background:#fff;color:var(--brand-800);box-shadow:var(--sh-md)}
 .btn-white:hover{background:var(--brand-50);color:var(--brand-900);transform:translateY(-1px);box-shadow:var(--sh-lg);text-decoration:none}
+/* Pressed — one shared treatment: sink, drop the lift and shadow, darken the
+   fill. Sits after the variant :hover rules so it wins the cascade tie
+   (without this, hover's translateY(-1px) survives the press). */
+.btn:active{transform:scale(.97);box-shadow:none;filter:brightness(.9)}
+/* Disabled/busy — the submit button while a search runs (contract row 1).
+   Hover rules keep their colour; motion and depth are what go away. */
+.btn:disabled,.btn:disabled:hover{opacity:.65;cursor:not-allowed;transform:none;box-shadow:none;filter:none}
 
 /* ============================================================
    HEADER
@@ -175,11 +209,13 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 .nav-cta{display:flex;gap:var(--s3);margin-left:var(--s5)}
 
 .burger{
-  display:none;margin-left:auto;width:48px;height:48px;border-radius:var(--r-md);
+  display:none;margin-left:auto;width:48px;height:var(--ctl-h-md);border-radius:var(--r-md);
   align-items:center;justify-content:center;color:#fff;
   border:1px solid rgba(255,255,255,.3);
 }
 .burger:hover{background:rgba(255,255,255,.12)}
+.burger[aria-expanded="true"]{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.5)}
+.burger:active{background:rgba(255,255,255,.24)}
 
 .mobile-nav{display:none}
 
@@ -189,6 +225,10 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 .hdr.is-solid .nav a{color:var(--ink-2)}
 .hdr.is-solid .nav a:hover{color:var(--brand-700)}
 .hdr.is-solid .burger{color:var(--brand-800);border-color:var(--line)}
+/* On the white header the default white-tint hover would be invisible. */
+.hdr.is-solid .burger:hover{background:var(--brand-50)}
+.hdr.is-solid .burger[aria-expanded="true"]{background:var(--brand-100);border-color:var(--brand-300)}
+.hdr.is-solid .burger:active{background:var(--line);color:var(--brand-900)}
 /* Nav link colour must not bleed onto the buttons nested in .nav-cta. */
 .hdr.is-solid .nav .btn-accent,.hdr.is-solid .nav .btn-onhero{color:#fff}
 .hdr.is-solid .nav .btn-accent:hover{color:#fff}
@@ -247,7 +287,7 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 .hero-trust svg{color:#6EE7B7;flex-shrink:0}
 
 .credit{font-size:.75rem;color:rgba(255,255,255,.52);letter-spacing:.01em;margin:var(--s6) 0 0;text-align:right}
-.credit a{color:rgba(255,255,255,.7);text-decoration:underline}
+.credit a{color:rgba(255,255,255,.7);text-decoration:underline;display:inline-block;padding:.25rem 0}
 .credit a:hover{color:#fff}
 
 /* ============================================================
@@ -263,7 +303,7 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 }
 .search-tabs{display:flex;gap:var(--s2);margin-bottom:var(--s5);border-bottom:1px solid var(--line);padding:var(--s2) 0 var(--s4);flex-wrap:wrap}
 .tab{
-  min-height:40px;padding:.5625rem var(--s4);border-radius:var(--r-md);
+  min-height:var(--ctl-h-sm);padding:.5625rem var(--s4);border-radius:var(--r-md);
   font-weight:700;font-size:.9375rem;color:var(--body);
   display:inline-flex;align-items:center;gap:.5rem;
   border:1px solid transparent;
@@ -271,19 +311,23 @@ input::placeholder,textarea::placeholder{color:#64748B;opacity:1}
 }
 .tab:hover{background:#F3F7FE;color:var(--brand-800)}
 .tab[aria-selected="true"]{background:var(--brand-800);color:#fff;box-shadow:var(--sh-md)}
+/* Pressed previews the selected fill; brightness separates press from rest
+   even on an already-selected tab. */
+.tab:active{background:var(--brand-800);color:#fff;filter:brightness(.9)}
 
 .route{display:flex;gap:var(--s3);align-items:flex-end;margin-bottom:var(--s3)}
 .row{display:flex;flex-wrap:wrap;gap:var(--s3)}
 .field{flex:1 1 150px;min-width:0}
 .field label{display:block;font-size:.8125rem;font-weight:700;letter-spacing:.01em;color:var(--ink-2);margin-bottom:.4375rem}
 .ctl{
-  width:100%;height:52px;padding:.625rem var(--s4);
+  width:100%;height:var(--ctl-h-field);padding:.625rem var(--s4);
   background:#fff;border:1.5px solid var(--line);border-radius:var(--r-md);
   font-weight:600;color:var(--ink);
   transition:border-color var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease);
 }
 .ctl:hover{border-color:var(--brand-300)}
-.ctl:focus{outline:none;border-color:var(--brand-600);box-shadow:0 0 0 4px rgba(37,99,235,.16)}
+/* Glow supplements the shared ring — it never replaces it. */
+.ctl:focus{border-color:var(--brand-600);box-shadow:0 0 0 4px rgba(37,99,235,.16)}
 select.ctl{appearance:none;cursor:pointer;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23475569' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right .875rem center;background-size:18px;padding-right:2.5rem}
@@ -292,22 +336,26 @@ input[type="date"].ctl::-webkit-calendar-picker-indicator{cursor:pointer;opacity
 input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
 
 .swap{
-  flex:0 0 52px;width:52px;height:52px;border-radius:50%;
+  flex:0 0 var(--ctl-h-field);width:var(--ctl-h-field);height:var(--ctl-h-field);border-radius:50%;
   display:grid;place-items:center;margin-bottom:1px;
   color:var(--brand-800);background:#F3F7FE;border:1.5px solid var(--line-accent);
   transition:transform var(--t-base) var(--ease-back),background-color var(--t-base) var(--ease),color var(--t-base) var(--ease);
 }
 .swap:hover{background:var(--brand-800);color:#fff;border-color:var(--brand-800)}
+/* Pressed steps one shade darker — colour cue, no transform, so it never
+   fights the .spin rotate or framer's whileTap. */
+.swap:active{background:var(--brand-900)}
 .swap.spin{transform:rotate(180deg)}
 
-.stepper{display:flex;align-items:center;height:52px;border:1.5px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:border-color var(--t-base) var(--ease)}
+.stepper{display:flex;align-items:center;height:var(--ctl-h-field);border:1.5px solid var(--line);border-radius:var(--r-md);overflow:hidden;transition:border-color var(--t-base) var(--ease)}
 .stepper:focus-within{border-color:var(--brand-600);box-shadow:0 0 0 4px rgba(37,99,235,.16)}
 .stepper button{width:48px;height:100%;display:grid;place-items:center;color:var(--brand-700);transition:background-color var(--t-fast) var(--ease)}
 .stepper button:hover:not(:disabled){background:#F3F7FE}
+.stepper button:active:not(:disabled){background:var(--brand-800);color:#fff}
 .stepper button:disabled{color:#CBD5E1;cursor:not-allowed}
 .stepper output{flex:1;text-align:center;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
 
-.search-go{flex:1 1 100%;margin-top:var(--s3)}
+.search-go{flex:1 1 100%;width:100%;margin-top:var(--s3)}
 .search-note{margin-top:var(--s3);font-size:.8125rem;color:var(--body);display:flex;align-items:flex-start;gap:.4375rem}
 .search-note svg{margin-top:.2rem;flex-shrink:0}
 
@@ -475,7 +523,8 @@ input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
 .ftr-grid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:var(--s6)}
 .ftr-col p{font-size:.875rem;max-width:32ch;margin-top:var(--s3);color:#9FB6DC}
 .ftr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.75rem}
-.ftr a{color:#A8BEE2;font-size:.875rem}
+/* line-height lifts the link box past the 24px target floor (§2.5.8). */
+.ftr a{color:#A8BEE2;font-size:.875rem;line-height:1.9}
 .ftr a:hover{color:#fff}
 .ftr-bot{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s7);padding-top:var(--s5);border-top:1px solid rgba(255,255,255,.14);font-size:.8125rem;color:#8FA6CB}
 .ftr-bot ul{flex-direction:row;gap:var(--s5)}
@@ -543,4 +592,6 @@ input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
     animation-duration:.01ms !important;animation-iteration-count:1 !important;
     transition-duration:.01ms !important;
   }
+  /* Pressed keeps its colour feedback and drops the sink (rule 5). */
+  .btn:active{transform:none}
 }

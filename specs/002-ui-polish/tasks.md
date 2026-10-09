@@ -22,7 +22,7 @@ implemented and tested independently. Refines the approved plan's Task List
 
 **Purpose**: Confirm a clean baseline so polish regressions are attributable
 
-- [ ] T001 Verify clean baseline: `npm run build` and `npm run check` both pass on unmodified code (145 assertions green)
+- [X] T001 Verify clean baseline: `npm run build` and `npm run check` both pass on unmodified code (145 assertions green)
 
 ---
 
@@ -32,7 +32,7 @@ implemented and tested independently. Refines the approved plan's Task List
 
 **?? CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T002 Add additive tokens to `:root` in src/styles.css: type scale (`--fs-xs .75rem`, `--fs-sm .8125rem`, `--fs-md .875rem`, `--fs-base .9375rem`, `--fs-lg 1.0625rem`, `--fs-h1/h2/h3` + `--fs-lead` = existing clamp values), `--surface:#fff`, focus ring (`--focus-ring`, `--focus-ring-w`, `--focus-ring-off`), control heights (`--ctl-h-sm`, `--ctl-h-md`), `--tap-min:24px` (invariant: existing token values byte-identical, constitution II)
+- [X] T002 Add additive tokens to `:root` in src/styles.css: type scale (`--fs-xs .75rem`, `--fs-sm .8125rem`, `--fs-md .875rem`, `--fs-base .9375rem`, `--fs-lg 1.0625rem`, `--fs-h1/h2/h3` + `--fs-lead` = existing clamp values), `--surface:#fff`, focus ring (`--focus-ring`, `--focus-ring-w`, `--focus-ring-off`), control heights (`--ctl-h-sm`, `--ctl-h-md`), `--tap-min:24px` (invariant: existing token values byte-identical, constitution II)
 
 **Checkpoint**: Foundation ready — US1/US2/US3 can start; T012 may run any time after this (its file is disjoint from US1)
 
@@ -46,10 +46,10 @@ implemented and tested independently. Refines the approved plan's Task List
 
 ### Implementation for User Story 1
 
-- [ ] T003 [US1] Global `:focus-visible` treatment (outline + offset from `--focus-ring*` tokens) for all interactive elements, plus dark-surface variant; absorb the 2 legacy `:focus{` rules in src/styles.css (FR-001, FR-004)
-- [ ] T004 [US1] Button state matrix in src/styles.css: distinct `:active`, `:disabled`, and busy styling for `.btn-primary/.btn-accent/.btn-ghost/.btn-white/.btn-onhero` (+ `.btn-sm`); height/radius/padding defined once per size class so variant rules change color only (contracts/control-states.md rules 1–3, FR-002, FR-003)
-- [ ] T005 [US1] Non-button control states in src/styles.css per contract matrix: `.tab` (incl. aria-selected look), `.ctl` select/date, `.burger` (open + focus), `.swap`, stepper ± (disabled at bounds), nav/footer text links; all targets ≥ `--tap-min` (FR-001, FR-005)
-- [ ] T006 [US1] Verify US1: quickstart S1–S3 browser pass (focus ring on 3 surface types, state matrix, zero layout shift on state change)
+- [X] T003 [US1] Global `:focus-visible` treatment (outline + offset from `--focus-ring*` tokens) for all interactive elements, plus dark-surface variant; absorb the 2 legacy `:focus{` rules in src/styles.css (FR-001, FR-004)
+- [X] T004 [US1] Button state matrix in src/styles.css: distinct `:active`, `:disabled`, and busy styling for `.btn-primary/.btn-accent/.btn-ghost/.btn-white/.btn-onhero` (+ `.btn-sm`); height/radius/padding defined once per size class so variant rules change color only (contracts/control-states.md rules 1–3, FR-002, FR-003)
+- [X] T005 [US1] Non-button control states in src/styles.css per contract matrix: `.tab` (incl. aria-selected look), `.ctl` select/date, `.burger` (open + focus), `.swap`, stepper ± (disabled at bounds), nav/footer text links; all targets ≥ `--tap-min` (FR-001, FR-005)
+- [X] T006 [US1] Verify US1: quickstart S1–S3 browser pass (focus ring on 3 surface types, state matrix, zero layout shift on state change)
 
 **Checkpoint**: US1 independently testable — MVP demo point
 

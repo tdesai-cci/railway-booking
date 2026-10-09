@@ -6,20 +6,20 @@ operates on.
 
 ## 1. Design token catalog
 
-Source of truth: `:root` in `src/styles.css` (lines 7–62 today).
+Source of truth: `:root` in `src/styles.css` (token block, ~lines 7–90).
 
 | Category | Existing tokens | Added by this module |
 |---|---|---|
 | Color — brand | `--brand-50…900` | — (values frozen, relationship frozen) |
 | Color — accent | `--accent-50…700` | — (values frozen) |
 | Color — ink/status | `--ink`, `--ink-2`, `--body`, `--muted*`, `--line*`, `--ok`, `--warn`, avatars | `--surface` (`#fff` — the 43× literal), plus recurring one-offs surfaced by the dup-hex rule (e.g. `#F3F7FE`, `#CBD5E1`) if they repeat after cleanup |
-| Type scale | fonts `--font`, `--display` | `--fs-xs .75rem`, `--fs-sm .8125rem`, `--fs-md .875rem`, `--fs-base .9375rem`, `--fs-lg 1.0625rem` (values = current literals), `--fs-h1/h2/h3`, `--fs-lead` = the five existing `clamp()` display sizes |
+| Type scale | fonts `--font`, `--display` | `--fs-xs .75rem`, `--fs-sm .8125rem`, `--fs-md .875rem`, `--fs-base .9375rem`, `--fs-lg 1.0625rem`, `--fs-body 1rem`, `--fs-h3 1.125rem`, `--fs-step 3rem` (repeats/singletons — values = the literals they replace); `--fs-lead`, `--fs-h1`, `--fs-h1-sm 2rem`, `--fs-h2`, `--fs-stat` (the `clamp()` display sizes: hero-sub / h1 / ≤640px h1 / h2 / stat numerals) |
 | Spacing | `--s1…s9` (4/8 dp) | — |
 | Radii | `--r-sm…pill` | — |
 | Elevation | `--sh-sm…xl`, `--sh-on-dark` | — |
 | Motion | `--t-fast/base/slow`, `--ease`, `--ease-in` | — |
-| Focus | — | `--focus-ring` (color), `--focus-ring-w` (width), `--focus-ring-off` (offset) |
-| Control sizing | — (`.btn` sizes baked into rules) | `--ctl-h-sm`, `--ctl-h-md` (min heights per size class) and `--tap-min: 24px` (WCAG 2.2 AA target floor) |
+| Focus | — | `--focus-ring` (default = `--brand-500`, 8.7:1 on white), `--focus-ring-dark` (`#fff`, navy plates: hero, stats, cta, footer, unsolid header, skip), `--focus-ring-w` (3px), `--focus-ring-off` (2px) |
+| Control sizing | — (`.btn` sizes baked into rules) | `--ctl-h-sm:40px` (`.btn-sm`, `.tab`), `--ctl-h-md:48px` (`.btn`, `.burger`), `--ctl-h-field:52px` (`.ctl`, `.stepper`, `.swap`), `--tap-min:24px` (WCAG 2.2 AA target floor) |
 
 ### Invariants (validation rules)
 
