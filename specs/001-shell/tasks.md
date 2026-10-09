@@ -95,9 +95,9 @@ URLs, US3 honest placeholders) so each story is independently testable.
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T018 [P] Confirm Wikimedia photo attribution renders on home and footer after the split; wordmark/TrainMark/palette untouched (constitution II)
-- [ ] T019 Remove dead code/anchors from src/App.jsx after rewiring; ensure no orphaned imports
-- [ ] T020 Run full quickstart.md validation (all 10 scenarios) + `npm run build` + `npm run check` as final gate
+- [X] T018 [P] Confirm Wikimedia photo attribution renders on home and footer after the split; wordmark/TrainMark/palette untouched (constitution II)
+- [X] T019 Remove dead code/anchors from src/App.jsx after rewiring; ensure no orphaned imports
+- [X] T020 Run full quickstart.md validation (all 10 scenarios) + `npm run build` + `npm run check` as final gate
 
 ---
 
