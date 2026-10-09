@@ -9,7 +9,7 @@ export default function Placeholder({ title, blurb, cta }) {
       <div className="wrap">
         <div className="sec-head">
           <span className="badge badge-days">Coming soon</span>
-          <h2>{title}</h2>
+          <h1>{title}</h1>
           <p>{blurb || `${title} is being built. It will live on this page.`}</p>
           <p style={{ marginTop: "var(--s4)" }}>
             <Link className="btn btn-accent" to={(cta && cta.to) || "/"}>

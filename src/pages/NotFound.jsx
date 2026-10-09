@@ -6,7 +6,7 @@ export default function NotFound() {
     <section className="sec">
       <div className="wrap">
         <div className="sec-head" style={{ textAlign: "center" }}>
-          <h2>Page not found</h2>
+          <h1>Page not found</h1>
           <p>That address doesn't match a page on this site.</p>
           <p style={{ marginTop: "var(--s4)" }}>
             <Link className="btn btn-accent" to="/">Back to home</Link>

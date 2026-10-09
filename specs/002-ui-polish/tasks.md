@@ -63,9 +63,9 @@ implemented and tested independently. Refines the approved plan's Task List
 
 ### Implementation for User Story 2
 
-- [ ] T007 [US2] Map all font-size literals → `--fs-*` tokens in src/styles.css and the 2 inline `fontSize` values in src/pages/Home.jsx — rendered sizes byte-identical (FR-006, FR-007)
-- [ ] T008 [US2] Dup-hex cleanup in src/styles.css: `#fff` (43×) → `--surface`, every color repeating outside `:root` → new/existing tokens; singletons remain literals (research R3, FR-006)
-- [ ] T009 [US2] Landing section rhythm in src/styles.css: section paddings/gaps resolve to `--s*` scale; replace any one-off spacing values (FR-006)
+- [X] T007 [US2] Map all font-size literals → `--fs-*` tokens in src/styles.css and the 2 inline `fontSize` values in src/pages/Home.jsx — rendered sizes byte-identical (FR-006, FR-007)
+- [X] T008 [US2] Dup-hex cleanup in src/styles.css: `#fff` (43×) → `--surface`, every color repeating outside `:root` → new/existing tokens; singletons remain literals (research R3, FR-006)
+- [X] T009 [US2] Landing section rhythm in src/styles.css: section paddings/gaps resolve to `--s*` scale; replace any one-off spacing values (FR-006)
 - [ ] T010 [US2] Shell chrome consistency in src/pages/Placeholder.jsx, src/pages/NotFound.jsx and src/styles.css: heading levels/sizes from `--fs-*`, spacing from `--s*`, same rhythm as landing (FR-007)
 - [ ] T011 [US2] Verify US2: quickstart S8 + S9 browser pass (token-resolved spacing/type, heading outline, 7 Wikimedia credits, wordmark/palette untouched)
 

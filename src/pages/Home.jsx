@@ -443,7 +443,7 @@ function Features() {
 function RouteCards() {
   const reduced = useReducedMotion();
   return (
-    <Sec id="routes" className="sec" style={{ background: "#fff", borderBlock: "1px solid var(--line)" }}>
+    <Sec id="routes" className="sec" style={{ background: "var(--surface)", borderBlock: "1px solid var(--line)" }}>
       <div className="wrap">
         <SecHead title="The routes booked most this month"
                  sub="Fares below are for a single AC Tier 3 seat on the cheapest train in the corridor." />
@@ -501,7 +501,7 @@ function Steps() {
 function Testimonials() {
   const reduced = useReducedMotion();
   return (
-    <Sec className="sec" style={{ background: "#fff", borderBlock: "1px solid var(--line)" }}>
+    <Sec className="sec" style={{ background: "var(--surface)", borderBlock: "1px solid var(--line)" }}>
       <div className="wrap">
         <SecHead title="People who stopped queueing" />
         <div className="quotes">
@@ -537,13 +537,13 @@ function Faq() {
           {FAQS.map(([q, a], i) => (
             <motion.div key={q} layout={!reduced}
               style={{ border: "1px solid var(--line)", borderRadius: "var(--r-md)",
-                       marginBottom: "var(--s3)", overflow: "hidden", background: "#fff",
+                       marginBottom: "var(--s3)", overflow: "hidden", background: "var(--surface)",
                        borderColor: open === i ? "var(--brand-300)" : "var(--line)" }}>
               <button type="button" aria-expanded={open === i} aria-controls={`faq-${i}`}
                 onClick={() => setOpen(o => o === i ? -1 : i)}
                 style={{ display: "flex", alignItems: "center", justifyContent: "space-between",
                          gap: "var(--s4)", padding: "var(--s5)", minHeight: 64, width: "100%",
-                         textAlign: "left", fontWeight: 700, color: "var(--ink)", fontSize: ".9375rem" }}>
+                         textAlign: "left", fontWeight: 700, color: "var(--ink)", fontSize: "var(--fs-base)" }}>
                 {q}
                 <motion.span className="chev" {...chevron(open === i, reduced)}>
                   <Ico d="M6 9l6 6 6-6" size={20} sw={2.4} />
@@ -552,7 +552,7 @@ function Faq() {
               <AnimatePresence initial={false}>
                 {open === i && (
                   <motion.div id={`faq-${i}`} key="body" {...faqBody(reduced, true)}>
-                    <p style={{ padding: "0 var(--s5) var(--s5)", fontSize: ".9375rem" }}>{a}</p>
+                    <p style={{ padding: "0 var(--s5) var(--s5)", fontSize: "var(--fs-base)" }}>{a}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
