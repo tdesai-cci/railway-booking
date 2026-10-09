@@ -141,4 +141,10 @@ const bareFontSizes = [...outside.matchAll(/font-size:\s*(?!var\()[^;}"\n]+/g)].
 ok(bareFontSizes.length === 0,
    `bare font-size literals: ${bareFontSizes.slice(0, 3).join(", ")}`);
 
+// 9e. FR-005 target sizing: --tap-min stays 24px and the footer's inline
+// list links keep their >= --tap-min hit area (SC-005 regression guard).
+ok(/--tap-min:\s*24px/.test(css), "--tap-min must be 24px (WCAG 2.2 AA)");
+ok(/\.ftr li a\{[^}]*min-height:var\(--tap-min\)/.test(css),
+   "footer list links must keep min-height:var(--tap-min) (FR-005)");
+
 if (!process.exitCode) console.log(`SELF-CHECK PASSED — ${checks} assertions`);

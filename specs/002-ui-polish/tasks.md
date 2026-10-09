@@ -169,3 +169,13 @@ Task T012 [P]: "Route-card images via module imports in src/pages/Home.jsx"
 - Commit after each story/checkpoint; keep `npm run build` + `npm run check` green at every commit
 - Token rule: additive only — never edit an existing token value (constitution II, ask-first)
 - No new dependencies; no routing changes (plan Constitution Check)
+
+---
+
+## Phase 7: Convergence
+
+**Purpose**: Gaps found by `/speckit.converge` between spec/plan/tasks and the shipped
+code. Append-only — no task above was modified; assessment date 2026-10-09.
+
+- [X] T017 Make the search card and its controls render at resting size throughout the busy/submit window: `layout={!reduced}` on `motion.form` (src/pages/Home.jsx:172) projects the whole card to scaleY 0.4827 → 0.2356 for ~1–2 s on every submit (button measured 174×23 then 174×11; neighbor fields 80 → 39 px), so S3's "busy label without resizing or shifting neighbors" fails in a real browser — per US1/AC2, FR-002, quickstart S3 (contradicts)
+- [X] T018 Give the 15 inline footer links in src/App.jsx a hit area of at least 24×24 CSS px (currently 26–90 × 22 px) and add a self-check assertion enforcing FR-005 target sizing so the gap cannot regress — per SC-005, FR-005, US1/AC4 (partial)

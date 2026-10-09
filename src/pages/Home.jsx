@@ -169,7 +169,7 @@ function SearchForm() {
   return (
     <motion.form
       className="search" id="search-form" aria-label="Search trains"
-      onSubmit={submit} {...riseIn(reduced, 0.42)} layout={!reduced}
+      onSubmit={submit} {...riseIn(reduced, 0.42)}
     >
       <div className="search-tabs" role="tablist" aria-label="Booking type">
         {["One way", "Round trip", "Multi-city"].map(t => (

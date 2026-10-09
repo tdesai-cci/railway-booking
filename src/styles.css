@@ -531,6 +531,9 @@ input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
 /* line-height lifts the link box past the 24px target floor (§2.5.8). */
 .ftr a{color:var(--ftr-text);font-size:var(--fs-md);line-height:1.9}
 .ftr a:hover{color:var(--surface)}
+/* FR-005: the list links are inline text — opt into a real >= 24px target.
+   inline-block lets min-height apply; height stays the line box (no shift). */
+.ftr li a{display:inline-block;min-height:var(--tap-min)}
 .ftr-bot{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap;margin-top:var(--s7);padding-top:var(--s5);border-top:1px solid rgba(255,255,255,.14);font-size:var(--fs-sm);color:#8FA6CB}
 .ftr-bot ul{flex-direction:row;gap:var(--s5)}
 .ftr .brand{color:var(--surface)}
