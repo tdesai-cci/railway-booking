@@ -69,9 +69,9 @@ URLs, US3 honest placeholders) so each story is independently testable.
 
 ### Implementation for User Story 2
 
-- [ ] T012 [US2] Add scroll/focus manager to src/App.jsx: on path change scroll to hash target if present else top; move focus to `<main>` (FR-004, FR-005, constitution III)
-- [ ] T013 [US2] Verify cross-page anchors: clicking `/#search` from any sub-page lands on home scrolled to that section; anchor URLs refresh to their section (FR-005, spec edge case 1)
-- [ ] T014 [US2] Verify: quickstart scenarios 4, 5, 7 (deep link, unknown URL, Back/Forward), 9 (reduced motion), 10 (keyboard-only pass) confirmed manually
+- [X] T012 [US2] Add scroll/focus manager to src/App.jsx: on path change scroll to hash target if present else top; move focus to `<main>` (FR-004, FR-005, constitution III)
+- [X] T013 [US2] Verify cross-page anchors: clicking `/#search` from any sub-page lands on home scrolled to that section; anchor URLs refresh to their section (FR-005, spec edge case 1)
+- [X] T014 [US2] Verify: quickstart scenarios 4, 5, 7 (deep link, unknown URL, Back/Forward), 9 (reduced motion), 10 (keyboard-only pass) confirmed manually
 
 **Checkpoint**: US1 + US2 both work; deep linking and resumption proven.
 
