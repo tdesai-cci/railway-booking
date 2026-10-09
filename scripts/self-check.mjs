@@ -83,6 +83,13 @@ const anchors = anchorList
 anchors.forEach(id =>
   ok(homeSrc.includes(`id="${id}"`), `homeAnchor "${id}" has no element id in Home.jsx`));
 
+// Placeholder CTA targets must resolve like any other link (FR-006).
+[...routesSrc.matchAll(/to:\s*"([^"]+)"/g)].map(m => m[1]).forEach(t => {
+  const [p, hash] = t.split("#");
+  ok(paths.includes(p), `routes.jsx cta to unknown path ${t}`);
+  if (hash) ok(anchors.includes(hash), `routes.jsx cta to unknown anchor #${hash}`);
+});
+
 // Every literal link target in App.jsx resolves: paths against the table,
 // fragments against homeAnchors (skip link may target #main).
 [...appSrc.matchAll(/["'](\/[^"']*|#[^"']*)["']/g)].map(m => m[1]).filter(t => t.length > 1).forEach(t => {
