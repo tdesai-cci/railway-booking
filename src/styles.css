@@ -357,7 +357,10 @@ input[type="date"].ctl:hover::-webkit-calendar-picker-indicator{opacity:1}
 .stepper button:disabled{color:var(--line-strong);cursor:not-allowed}
 .stepper output{flex:1;text-align:center;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
 
-.search-go{flex:1 1 100%;width:100%;margin-top:var(--s3)}
+/* The button's field has no visible label, so anchor it to the control
+   baseline (sibling inputs' bottom edge) instead of letting it float. */
+.field:has(.search-go){display:flex;flex-direction:column;justify-content:flex-end}
+.search-go{width:100%;margin-top:var(--s3)}
 .search-note{margin-top:var(--s3);font-size:var(--fs-sm);color:var(--body);display:flex;align-items:flex-start;gap:.4375rem}
 .search-note svg{margin-top:.2rem;flex-shrink:0}
 
