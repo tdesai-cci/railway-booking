@@ -110,4 +110,35 @@ if (ha) [...ha[1].matchAll(/"([^"]+)"/g)].map(m => m[1]).filter((_, i) => i % 2 
 [...homeSrc.matchAll(/href="(#[^"]+)"/g)].map(m => m[1]).forEach(t =>
   ok(anchors.includes(t.slice(1)), `Home.jsx links to unknown anchor ${t}`));
 
+// 9. UI polish static rules (002-ui-polish: contracts/control-states.md, FR-006).
+const css = readFileSync(new URL("../src/styles.css", import.meta.url), "utf8");
+const rootEnd = css.indexOf("}", css.indexOf(":root{")) + 1;
+const outside = css.slice(rootEnd);
+
+// 9a. No hex color outside :root may repeat — repeats must be tokens
+// (data-model invariant 3). Singletons stay literals by design.
+const hexTally = new Map();
+for (const m of outside.matchAll(/#[0-9a-fA-F]{3,8}\b/g))
+  hexTally.set(m[0].toLowerCase(), (hexTally.get(m[0].toLowerCase()) || 0) + 1);
+for (const [h, n] of hexTally)
+  ok(n === 1, `hex ${h} appears ${n}x outside :root — move it to a token`);
+
+// 9b. One shared focus ring from tokens; outline suppression is banned
+// (contract rule 3 — the ring is THE focus treatment).
+ok(/:focus-visible\{[^}]*var\(--focus-ring-w\)[^}]*solid var\(--focus-ring\)/.test(css),
+   "global :focus-visible must draw width+color from the --focus-ring tokens");
+ok(!/outline:\s*none/.test(css), "outline:none found — focus must stay perceivable");
+
+// 9c. Button/control state matrix present (contract rows 1-6).
+ok(/\.btn:active\{/.test(css), "missing .btn:active pressed state");
+ok(/\.btn:disabled/.test(css), "missing .btn:disabled/busy state");
+ok(/\.tab:active\{/.test(css), "missing .tab pressed state");
+ok(/\.stepper button:active/.test(css), "missing stepper pressed state");
+ok(/\.burger:active\{/.test(css), "missing .burger pressed state");
+
+// 9d. Type scale: every rendered font-size resolves from a --fs-* token (FR-006).
+const bareFontSizes = [...outside.matchAll(/font-size:\s*(?!var\()[^;}"\n]+/g)].map(m => m[0]);
+ok(bareFontSizes.length === 0,
+   `bare font-size literals: ${bareFontSizes.slice(0, 3).join(", ")}`);
+
 if (!process.exitCode) console.log(`SELF-CHECK PASSED — ${checks} assertions`);

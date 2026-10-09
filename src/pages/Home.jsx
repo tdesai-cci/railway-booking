@@ -10,6 +10,13 @@ import {
   resultsPanel, tap, faqBody, chevron, EASE,
 } from "../motion.js";
 
+/* Route photos as module imports so Vite emits them into dist — root-absolute
+ * /assets/*.jpg strings never leave the dev server (FR-009, SC-004). */
+import routeDelhiMumbai from "../../assets/route-delhi-mumbai.jpg";
+import routeMumbaiBengaluru from "../../assets/route-mumbai-bengaluru.jpg";
+import routeChennaiHyderabad from "../../assets/route-chennai-hyderabad.jpg";
+import routeDelhiKolkata from "../../assets/route-delhi-kolkata.jpg";
+
 /* ============================================================
    ICONS — one stroke, one weight, drawn inline. No glyphs.
    Ico and TrainMark are shared with the shell (App.jsx).
@@ -361,10 +368,10 @@ const FEATURES = [
 ];
 
 const ROUTES = [
-  ["route-delhi-mumbai", "Delhi → Mumbai", "New Delhi · Mumbai Central", "16h 20m", "42 trains", "1,145"],
-  ["route-mumbai-bengaluru", "Mumbai → Bengaluru", "Mumbai CSMT · KSR Bengaluru", "14h 35m", "28 trains", "892"],
-  ["route-chennai-hyderabad", "Chennai → Hyderabad", "Chennai Central · Hyderabad Deccan", "9h 45m", "31 trains", "604"],
-  ["route-delhi-kolkata", "Delhi → Kolkata", "New Delhi · Howrah", "17h 10m", "33 trains", "1,028"],
+  [routeDelhiMumbai, "Delhi → Mumbai", "New Delhi · Mumbai Central", "16h 20m", "42 trains", "1,145"],
+  [routeMumbaiBengaluru, "Mumbai → Bengaluru", "Mumbai CSMT · KSR Bengaluru", "14h 35m", "28 trains", "892"],
+  [routeChennaiHyderabad, "Chennai → Hyderabad", "Chennai Central · Hyderabad Deccan", "9h 45m", "31 trains", "604"],
+  [routeDelhiKolkata, "Delhi → Kolkata", "New Delhi · Howrah", "17h 10m", "33 trains", "1,028"],
 ];
 
 const QUOTES = [
@@ -451,7 +458,7 @@ function RouteCards() {
           {ROUTES.map(([img, name, ends, dur, count, price], i) => (
             <motion.article key={name} className="route-card" {...item(reduced, i + 1)}
               whileHover={reduced ? {} : { y: -4 }} transition={{ duration: 0.24, ease: EASE }}>
-              <div className="route-art" style={{ backgroundImage: `url(/assets/${img}.jpg)` }}>
+              <div className="route-art" style={{ backgroundImage: `url(${img})` }}>
                 <span className="route-code">{name}</span>
               </div>
               <div className="route-body">

@@ -66,8 +66,8 @@ implemented and tested independently. Refines the approved plan's Task List
 - [X] T007 [US2] Map all font-size literals → `--fs-*` tokens in src/styles.css and the 2 inline `fontSize` values in src/pages/Home.jsx — rendered sizes byte-identical (FR-006, FR-007)
 - [X] T008 [US2] Dup-hex cleanup in src/styles.css: `#fff` (43×) → `--surface`, every color repeating outside `:root` → new/existing tokens; singletons remain literals (research R3, FR-006)
 - [X] T009 [US2] Landing section rhythm in src/styles.css: section paddings/gaps resolve to `--s*` scale; replace any one-off spacing values (FR-006)
-- [ ] T010 [US2] Shell chrome consistency in src/pages/Placeholder.jsx, src/pages/NotFound.jsx and src/styles.css: heading levels/sizes from `--fs-*`, spacing from `--s*`, same rhythm as landing (FR-007)
-- [ ] T011 [US2] Verify US2: quickstart S8 + S9 browser pass (token-resolved spacing/type, heading outline, 7 Wikimedia credits, wordmark/palette untouched)
+- [X] T010 [US2] Shell chrome consistency in src/pages/Placeholder.jsx, src/pages/NotFound.jsx and src/styles.css: heading levels/sizes from `--fs-*`, spacing from `--s*`, same rhythm as landing (FR-007)
+- [X] T011 [US2] Verify US2: quickstart S8 + S9 browser pass (token-resolved spacing/type, heading outline, 7 Wikimedia credits, wordmark/palette untouched)
 
 **Checkpoint**: US2 independently testable; US1 still green
 
@@ -81,9 +81,9 @@ implemented and tested independently. Refines the approved plan's Task List
 
 ### Implementation for User Story 3
 
-- [ ] T012 [P] [US3] Route-card images via module imports in src/pages/Home.jsx (4 jpgs: `../../assets/route-*.jpg`) so Vite emits them to dist — fixes production-only broken images (FR-009). *[P]: disjoint from styles.css work; coordinate with T007 (same file) — run before or after it*
-- [ ] T013 [US3] Width sweep fixes in src/styles.css (and src/App.jsx only if header/footer cause overflow): horizontal overflow, clipping/overlap at 320/768/1024/1440; touch targets ≥ 24 px (FR-005, FR-008)
-- [ ] T014 [US3] Verify US3: quickstart S4–S6 browser pass (4 widths × 10 routes, 200% zoom, `dist/assets/route-*.jpg` present in preview)
+- [X] T012 [P] [US3] Route-card images via module imports in src/pages/Home.jsx (4 jpgs: `../../assets/route-*.jpg`) so Vite emits them to dist — fixes production-only broken images (FR-009). *[P]: disjoint from styles.css work; coordinate with T007 (same file) — run before or after it*
+- [X] T013 [US3] Width sweep fixes in src/styles.css (and src/App.jsx only if header/footer cause overflow): horizontal overflow, clipping/overlap at 320/768/1024/1440; touch targets ≥ 24 px (FR-005, FR-008)
+- [X] T014 [US3] Verify US3: quickstart S4–S6 browser pass (4 widths × 10 routes, 200% zoom, `dist/assets/route-*.jpg` present in preview)
 
 **Checkpoint**: All three stories independently functional
 
@@ -93,8 +93,8 @@ implemented and tested independently. Refines the approved plan's Task List
 
 **Purpose**: Static enforcement + final gate for everything above
 
-- [ ] T015 Static UI rules in scripts/self-check.mjs: no hex color outside `:root` occurs more than once; `.btn:focus-visible`, `.btn:active`, `.btn:disabled` rules exist; all pre-existing assertions still green (FR-001…FR-006 enforcement)
-- [ ] T016 Final gate: full quickstart.md validation (all 10 scenarios) + `npm run build` + `npm run check` — SC-001…SC-007 demonstrated
+- [X] T015 Static UI rules in scripts/self-check.mjs: no hex color outside `:root` occurs more than once; `.btn:focus-visible`, `.btn:active`, `.btn:disabled` rules exist; all pre-existing assertions still green (FR-001…FR-006 enforcement)
+- [X] T016 Final gate: full quickstart.md validation (all 10 scenarios) + `npm run build` + `npm run check` — SC-001…SC-007 demonstrated
 
 ---
 
